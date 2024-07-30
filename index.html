@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inside Out Fun Page</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #ffcc00;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            color: #ff6347;
+            margin: 0;
+            font-size: 3em;
+            text-shadow: 2px 2px #000000;
+        }
+        .characters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px 0;
+            background-color: #87cefa;
+            padding: 20px;
+            border-radius: 20px;
+        }
+        .character {
+            margin: 10px;
+            padding: 10px;
+            border: 2px solid #ff6347;
+            border-radius: 20px;
+            background-color: #fff;
+            width: 200px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+        .character:hover {
+            transform: scale(1.1);
+        }
+        /* .character img {
+            width: 100%;
+            border-radius: 20px;
+        } */
+        .character h2 {
+            color: #ff6347;
+            margin: 10px 0;
+            font-size: 1.5em;
+            text-shadow: 1px 1px #000000;
+        }
+        .character p {
+            color: #333;
+            font-size: 1em;
+            text-shadow: 1px 1px #ffffff;
+        }
+        footer {
+            background-color: #ffcc00;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+        footer p {
+            margin: 0;
+            color: #fff;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Inside Out Fun Page!</h1>
+    </header>
+    
+    <section class="characters">
+        <div class="character">
+            <!-- <img src="/images/joy.jpg" alt="Joy"> -->
+            <h2>Joy</h2>
+            <p>Joy is the leader of the emotions. She is optimistic, lighthearted, and determined to find the fun in every situation.</p>
+        </div>
+        <div class="character">
+            <!-- <img src="/images/sadness.jpg" alt="Sadness"> -->
+            <h2>Sadness</h2>
+            <p>Sadness is thoughtful and kind, always ready to listen and empathize. She is often overlooked but is essential for balance.</p>
+        </div>
+        <div class="character">
+            <!-- <img src="/images/anger.jpg" alt="Anger"> -->
+            <h2>Anger</h2>
+            <p>Anger is passionate and quick to react. He ensures things are fair and keeps everyone on their toes.</p>
+        </div>
+        <div class="character">
+            <!-- <img src="/images/disgust.jpg" alt="Disgust"> -->
+            <h2>Disgust</h2>
+            <p>Disgust is sharp-witted and expressive. She is always on the lookout for things that are beneath her standards.</p>
+        </div>
+        <div class="character">
+            <!-- <img src="/images/fear.jpg" alt="Fear"> -->
+            <h2>Fear</h2>
+            <p>Fear is cautious and always looking out for danger. He keeps everyone safe by being alert and prepared.</p>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2024 Inside Out Fun Page. All rights reserved.</p>
+    </footer>
+</body>
+</html>

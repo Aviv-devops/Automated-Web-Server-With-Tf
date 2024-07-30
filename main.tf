@@ -57,6 +57,12 @@ resource "aws_security_group" "security_g_terraform" {
     protocol    = "TCP"
     cidr_blocks = ["0.0.0.0/0"]
   }
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "TCP"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
 
   egress {
     from_port   = 0
@@ -72,12 +78,24 @@ resource "aws_security_group" "security_g_terraform" {
 
 # Create EC2 Instance
 resource "aws_instance" "nginx" {
-  ami             = "ami-03ed1381c73a5660e" # Update this with a valid AMI ID
+  ami             = var.aws-ami-of-region
   instance_type   = "t2.micro"
   subnet_id       = aws_subnet.public.id
-  vpc_security_group_ids = ["${aws_security_group.security_g_terraform.id}"]
-  user_data = file("userdata.sh")
+  vpc_security_group_ids = [aws_security_group.security_g_terraform.id]
+  key_name = var.key-pair
 
+    connection {
+      type        = "ssh"
+      user        = "ec2-user"
+      private_key = file(var.full-path-of-key-pair)
+      host        = self.public_ip
+    }
+  provisioner "file" {
+    source      = "index.html"
+    destination = "/tmp/index.html"
+  }
+
+  user_data = file("userdata.sh")
   tags = {
     Name = "ec2-terraform-nginx-project"
   }
@@ -86,5 +104,6 @@ resource "aws_instance" "nginx" {
 #output public ipv4 of the instance - the url of the web page
 output "instance_public_url" {
   description = "The public URL of the instance"
-  value       = "http://${aws_instance.nginx.public_dns}"
+  #value       = "${aws_instance.nginx.public_ip}"
+  value       = aws_instance.nginx.public_ip
 }

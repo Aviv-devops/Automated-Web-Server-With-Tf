@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "aws" {
-  region = "us-west-2"
+  region = "us-west-1"
   default_tags {
     tags = { 
         related = "terraform-project" 

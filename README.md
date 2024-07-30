@@ -1,4 +1,4 @@
-# Automated Web Werver With Terraform
+# Automated Web Server With Terraform
 Use Terraform to create a Nginx web server with an automated cloud environment that creates all you need to set up a web machine using: VPC, EC2, security group, rout table, IGW, option to connect the Nginx instance with SSH, and more.
 
 # Project README

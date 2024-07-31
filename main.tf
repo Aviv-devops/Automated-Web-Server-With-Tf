@@ -61,7 +61,7 @@ resource "aws_security_group" "security_g_terraform" {
     from_port   = 22
     to_port     = 22
     protocol    = "TCP"
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = ["${var.local-ipv4}/32"] # allow only to my pc public ip to enter from port 22
   }
 
   egress {

@@ -7,6 +7,10 @@ variable "key-pair" {
   description = "enter the keypair name in the region you chose" 
   type        = string
 }
+variable "local-ipv4" {
+  description = "enter the local public ipv4 of your pc (windows cmd command: 'curl -s http://ipv4.icanhazip.com', bash: 'echo $(curl -s http://ipv4.icanhazip.com)'" 
+  type        = string
+}
 variable "full-path-of-key-pair" {
   description = "enter the full path of the keypair file from your pc" 
   type        = string

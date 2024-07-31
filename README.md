@@ -43,10 +43,15 @@ The `variables.tf` file includes the following variables:
 |--------------------------|---------|-----------------------------------------------------|----------|
 | `key-pair`                | string  | The name of the AWS key pair used for SSH access.  | Yes      |
 | `full-path-of-key-pair`  | string  | The full local path to the AWS key pair file.      | Yes      |
+| `local-ipv4`             | string  | The local public ipv4 of the pc.                   | Yes      |
 | `aws-region`             | string  | The AWS region where resources will be created.    | No       |
 | `aws-ami-of-region`      | string  | The AMI ID for Amazon Linux in the specified region. | No       |
 
 **Note:** Ensure that `aws-ami-of-region` corresponds to an Amazon Linux image. If using a different image, adjustments to the `userdata.sh` script may be required.
+
+Linux terminal bash command to find public ipv4:   echo $(curl -s http://ipv4.icanhazip.com)
+
+Windows cmd batch command to find public ipv4:   curl -s http://ipv4.icanhazip.com
 
 ## Running the Terraform Configuration
 
